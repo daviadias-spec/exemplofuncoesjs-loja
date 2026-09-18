@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>calculadora de loja</h1>
+
+    <button onclick ="calcularcompra()"calcular compra></button> 
+   <button>aplicar desconto</button>
+   <p>id="resultado></p>
+   <script>
+    let total = 0;
+    function calcularcompra(){
+        let produto = prompt("Digite o nome do produto");
+         let prpreco = prompt("Digite o preço do produto");
+          let quantidade = prompt("Digite o quantidade  do produto");
+            total = preco * quantidade
+            document.getElementById("resultado").innerHTML = "produto: " + produto +  "<br>" + 
+            "unitário" + preco + "<br>"+ 
+            "quantidade" + quantidade + "<br> " + 
+            "total da compra" + total;
+
+    }
+
+
+   </script>
+</body>
+</html>
