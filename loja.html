@@ -6,26 +6,41 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>calculadora de loja</h1>
+    <h1>Calculadora de Loja</h1>
+    <button onclick="calcularcompra()">Calcular compra</button>
+    <button onclick="calculardesconto()">Aplicar desconto</button>
 
-    <button onclick ="calcularcompra()"calcular compra></button> 
-   <button>aplicar desconto</button>
-   <p>id="resultado></p>
-   <script>
-    let total = 0;
-    function calcularcompra(){
-        let produto = prompt("Digite o nome do produto");
-         let prpreco = prompt("Digite o preço do produto");
-          let quantidade = prompt("Digite o quantidade  do produto");
-            total = preco * quantidade
-            document.getElementById("resultado").innerHTML = "produto: " + produto +  "<br>" + 
-            "unitário" + preco + "<br>"+ 
-            "quantidade" + quantidade + "<br> " + 
-            "total da compra" + total;
+    <p id="resultado"></p>
 
-    }
+    <script>
+      let total = 0;
 
+      function calcularcompra(){
+        let produto = prompt("Digite o nome do produto: ");
+        let preco = prompt("Digite o preço do produto: ");
+        let quantidade = prompt("Digite a quantidade do produto: ");
 
-   </script>
+        total = preco * quantidade;
+
+        document.getElementById("resultado").innerHTML = 
+        "Produto: " + produto + "<br>" +
+        "Unitário: " + preco + "<br>" +
+        "Quantidade: " + quantidade + "<br>" +
+        "Total da compra: R$ " + total; 
+      }
+
+      function calculardesconto(){
+        let desconto = Number(prompt("Digite o % de desconto: "))
+        let valordesconto = total * desconto / 100;
+        let valorfinal = total - valordesconto;
+
+        document.getElementById("resultado").innerHTML = 
+        "<br><strong>Desconto: " + desconto + "%</strong><br>"+
+        "valor do desconto: R$ " + valordesconto + "<br>" +
+        "Valor final: R$ " + valorfinal;
+      }
+
+    </script>
+
 </body>
 </html>
