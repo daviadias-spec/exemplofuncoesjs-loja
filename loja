@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja</title>
+</head>
+<body>
+    <h1>Calculadora de Loja</h1>
+    <button onclick="calcularCompra()">Calcular compra</button>
+    <button onclick="calcularDesconto()">Aplicar desconto</button>
+    <p id="resultado"></p>
+
+    <script>
+        let total
+
+        function calcularCompra(){
+            let produto = window.prompt("Digite o nome do produto: ")
+            let preco = window.prompt("Digite o preço do produto: ")
+            let qtde = window.prompt("Digite a quantidade do produto: ")
+            total = preco * qtde
+
+            document.getElementById('resultado').innerHTML =
+            "Nome do produto: " + produto + "<br>" +
+            "Unitário: R$" + preco + "<br>" +
+            "Quantidade: " + qtde + "<br>" +
+            "Total da compra: R$" + total
+        }
+
+        function calcularDesconto(){
+            let desconto = Number(prompt("Digite o % de desconto: "))
+            let valorDesconto = total * (desconto / 100)
+            let valorFinal = total - valorDesconto
+
+            document.getElementById("resultado").innerHTML += "<br><br><strong>Desconto: " + desconto + "%"
+            + "</strong><br>" +
+            "Valor do desconto: R$" + valorDesconto +
+            "<br>Valor final: R$" + valorFinal
+        }
+    </script>
+</body>
+</html>
