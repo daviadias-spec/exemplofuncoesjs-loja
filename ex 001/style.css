@@ -7,6 +7,7 @@
     --suave: #6b7a74;
     --linha: #e3e8e4;
     --azul: #003ee9;
+    --azul-hover: #0026ff;
     --verde-claro: #b9e4cf;
     --vermelho: #c2413b;
     --raio: 16px;
@@ -46,19 +47,42 @@ h1 {
 h3 {
     font-size: 1rem;
     font-weight: 700;
+    margin-bottom: -8px;
 }
 
 /* Saldo: destaque principal */
 .saldo {
     background: var(--azul);
     color: white;
-    padding: 28px 24px;
+    padding: 24px;
     border-radius: var(--raio);
 }
 
-.saldo p {
+.saldo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.saldo-header p {
     color: var(--verde-claro);
     font-size: 0.95rem;
+}
+
+.btn-editar {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.btn-editar:hover {
+    background: rgba(255, 255, 255, 0.35);
 }
 
 .saldo h2 {
@@ -100,7 +124,7 @@ input::placeholder {
 input:focus,
 button:focus-visible {
     outline: 3px solid var(--verde-claro);
-    border-color: var(--verde);
+    border-color: var(--verde-claro);
 }
 
 button {
@@ -116,7 +140,7 @@ button {
 }
 
 button:hover {
-    background: rgb(0, 38, 255);
+    background: var(--azul-hover);
 }
 
 button:active {
@@ -124,10 +148,6 @@ button:active {
 }
 
 /* Lista de gastos */
-h3 {
-    margin-bottom: -8px;
-}
-
 #listaGastos {
     background: var(--card);
     border-radius: var(--raio);
@@ -158,8 +178,7 @@ h3 {
     border-bottom: none;
 }
 
-.gasto span:last-of-type,
-.gasto strong {
+.gasto span:last-of-type {
     font-weight: 700;
     color: var(--vermelho);
     white-space: nowrap;

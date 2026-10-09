@@ -3,43 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>controle de gastos</title>
-
-
+    <title>Controle de Gastos</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <main class="container">
-        <h1>
-            meu controle de gastos 
-        </h1>
+        <h1>Meu controle de gastos</h1>
+
         <section class="saldo">
-            <p>Saldo Disponivel</p>
-     <h2 id="saldo">R$500,00 </h2>
+            <div class="saldo-header">
+                <p>Saldo Disponível</p>
+                <button type="button" class="btn-editar" onclick="alterarSaldo()">Alterar saldo</button>
+            </div>
+            <h2 id="saldo">R$500,00</h2>
         </section>
-            <section class="formulario">
-                <input type="text "
-                id=" descrição"
-                placeholder="descrição do gastos"
-                >
-                <input type="number"
-                id="valor"
-                placeholder="valor"
-                min="0"
-                inputmode="decimal">
-            <button>
-                adicionar gastos
-            </button>
-            </section>
-            <h3>meus gastosd</h3>
-            <div id="lista"></div>
-            <section class="total">
-                <p>total gastos</p>
-                <h2>R$0,00</h2>
-            </section>
+
+        <section class="formulario">
+            <input type="text" id="descricao" placeholder="Descrição do gasto">
+            <input type="number" id="valor" placeholder="Valor" min="0" step="0.01" inputmode="decimal">
+            <button onclick="adicionarGasto()">Adicionar gasto</button>
+        </section>
+
+        <h3>Meus gastos</h3>
+
+        <div id="listaGastos"></div>
+
+        <section class="total">
+            <p>Total gasto</p>
+            <h2 id="total">R$0,00</h2>
+        </section>
     </main>
-    <script src="script.js" defer>
-    
-    </script>
 </body>
 </html>
